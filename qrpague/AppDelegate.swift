@@ -15,43 +15,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var sufixUrl: String!
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    
         return true
     }
     
-//    func application(_ application: UIApplication,
-//                     continue userActivity: NSUserActivity,
-//                     restorationHandler: @escaping ([Any]?) -> Void) -> Bool{
-//        guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
-//            let incomingURL = userActivity.webpageURL,
-//            let components = NSURLComponents(url: incomingURL, resolvingAgainstBaseURL: true),
-//            let path = components.path,
-//            let params = components.queryItems else {
-//                return false
-//        }
-//
-//        print("path = \(path)")
-//
-//        if let albumName = params.first(where: { $0.name == "albumname" } )?.value,
-//            let photoIndex = params.first(where: { $0.name == "index" })?.value {
-//
-//            print("album = \(albumName)")
-//            print("photoIndex = \(photoIndex)")
-//            return true
-//
-//        } else {
-//            print("Either album name or photo index missing")
-//            return false
-//        }
-//    }
-
+    func application(_ application: UIApplication,
+                        continue userActivity: NSUserActivity,
+                        restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
+            let url = userActivity.webpageURL
+            else
+                {return false}
+        
+            self.sufixUrl = url.absoluteString
+            return true
+    }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-
         self.sufixUrl = url.absoluteString
-        
         return true
     }
 

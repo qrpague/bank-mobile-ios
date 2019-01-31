@@ -314,10 +314,9 @@ class QrcodeController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
                 } catch  {
                     print(error)
                 }
-
-            
         }
     }
+    
     func openWebview(tipo: String,  code: String) {
         var bodyCode  = code.replacingOccurrences(of: " ", with: "")
  
