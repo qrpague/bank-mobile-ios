@@ -20,12 +20,6 @@ class QrcodeController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(
-            self,
-            selector:#selector(notificationCameraQrcode),
-            name: UIApplication.didBecomeActiveNotification,
-            object: nil)
-        
         view.backgroundColor = UIColor.black
        
         startCaptureSession()
@@ -279,7 +273,7 @@ class QrcodeController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
             self.openWebview( tipo: self.boletoTipo, code: stringValue )
             captureSession.stopRunning()
-            self.dismiss(animated: true)
+            //self.dismiss(animated: true)
         } 
         
 
@@ -291,30 +285,6 @@ class QrcodeController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         case Inbox = "Inbox"
         case Library = "Library"
         case Temp = "tmp"
-    }
-    
-    @objc func notificationCameraQrcode() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        if ( appDelegate.sufixUrl == nil ) {
-            return
-        }
-        
-        if ( !appDelegate.sufixUrl.contains("file://") )  {
-            let url = appDelegate.sufixUrl!
-            self.openWebview(tipo: "QRCODE", code: url)
-        } else {
-            
-            let url = URL( string:  appDelegate.sufixUrl )
-
-                do {  
-                    let data = try Data(contentsOf: url! )
-                    let dataString = String(data: data, encoding: .utf8)
-                    self.openWebview(tipo: "CAMERA-NATIVA-QRCODE", code: dataString! )
-                    
-                } catch  {
-                    print(error)
-                }
-        }
     }
     
     func openWebview(tipo: String,  code: String) {
