@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		412321552203753300F60BCD /* InitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412321542203753300F60BCD /* InitController.swift */; };
 		933AF5902198DEEB00B69EB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933AF58F2198DEEB00B69EB0 /* AppDelegate.swift */; };
 		933AF5922198DEEB00B69EB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933AF5912198DEEB00B69EB0 /* ViewController.swift */; };
 		933AF5952198DEEB00B69EB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 933AF5932198DEEB00B69EB0 /* Main.storyboard */; };
@@ -24,9 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		412321542203753300F60BCD /* InitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitController.swift; sourceTree = "<group>"; };
 		413C1B7A2200CB90005E44BD /* qrpague.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = qrpague.entitlements; sourceTree = "<group>"; };
 		933AF58C2198DEEB00B69EB0 /* qrpague.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qrpague.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		933AF58F2198DEEB00B69EB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		933AF58F2198DEEB00B69EB0 /* AppDelegate.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		933AF5912198DEEB00B69EB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		933AF5942198DEEB00B69EB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		933AF5972198DEEB00B69EB0 /* qrpague.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = qrpague.xcdatamodel; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				9387667B219904890080B851 /* QrcodeController.swift */,
 				933AF5912198DEEB00B69EB0 /* ViewController.swift */,
 				933AF58F2198DEEB00B69EB0 /* AppDelegate.swift */,
+				412321542203753300F60BCD /* InitController.swift */,
 				933AF5932198DEEB00B69EB0 /* Main.storyboard */,
 				933AF5992198DEED00B69EB0 /* Assets.xcassets */,
 				933AF59B2198DEED00B69EB0 /* LaunchScreen.storyboard */,
@@ -198,6 +201,7 @@
 				9387667C219904890080B851 /* QrcodeController.swift in Sources */,
 				933AF5922198DEEB00B69EB0 /* ViewController.swift in Sources */,
 				933AF5902198DEEB00B69EB0 /* AppDelegate.swift in Sources */,
+				412321552203753300F60BCD /* InitController.swift in Sources */,
 				933AF5982198DEEB00B69EB0 /* qrpague.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

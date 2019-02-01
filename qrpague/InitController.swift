@@ -38,7 +38,7 @@ class InitController: UIViewController, AVCaptureMetadataOutputObjectsDelegate  
     }
     
     func openWebview(tipo: String,  code: String) {
-        var bodyCode  = code.replacingOccurrences(of: " ", with: "")
+        let bodyCode  = code.replacingOccurrences(of: " ", with: "")
         
         let storyBoard: UIStoryboard = self.storyboard!
         let viewController = storyBoard.instantiateViewController(withIdentifier: "viewController") as! ViewController

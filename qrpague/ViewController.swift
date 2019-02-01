@@ -63,7 +63,7 @@ class ViewController: UIViewController, WKScriptMessageHandler {
      
         switch (message.name) {
         case "backWebview":
-                webView.goBack()
+            webView.goBack()
             break
         case "showToast":
             popUpMsg( msg: message.body as! String)
@@ -77,7 +77,6 @@ class ViewController: UIViewController, WKScriptMessageHandler {
             
         }
     }
-
     
     func popUpMsg( msg: String ) {
         let alert = UIAlertController(title: "Aviso!", message: msg, preferredStyle: UIAlertController.Style.alert)
@@ -99,8 +98,9 @@ class ViewController: UIViewController, WKScriptMessageHandler {
     }
     
     func openQrcodeView() {
-        self.dismiss(animated: true, completion: nil)
- 
+        let storyBoard: UIStoryboard = self.storyboard!
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "qrcodeViewController") as! QrcodeController
+        self.present(newViewController, animated: true, completion: nil)
     }
 }
 
