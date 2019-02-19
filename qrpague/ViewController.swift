@@ -21,7 +21,6 @@ class ViewController: UIViewController, WKScriptMessageHandler {
         
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.isTranslucent = true
-
         
         print( code , tipo )
  
@@ -31,7 +30,6 @@ class ViewController: UIViewController, WKScriptMessageHandler {
         theConfiguration.userContentController = contentController
         
         let codeEncode = self.code.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)
-
         
         webView = WKWebView(frame: self.view.frame, configuration: theConfiguration)
         let url = Bundle.main.url(forResource: "index", withExtension: "html", subdirectory: "www")!
@@ -40,7 +38,6 @@ class ViewController: UIViewController, WKScriptMessageHandler {
             return openQrcodeView()
         }
         webView.loadFileURL(urlWithParams!, allowingReadAccessTo: urlWithParams!)
-        
         
         webView.configuration.userContentController.add(self, name: "backWebview")
         webView.configuration.userContentController.add(self, name: "showToast")
@@ -66,7 +63,7 @@ class ViewController: UIViewController, WKScriptMessageHandler {
      
         switch (message.name) {
         case "backWebview":
-                webView.goBack()
+            webView.goBack()
             break
         case "showToast":
             popUpMsg( msg: message.body as! String)
@@ -80,9 +77,6 @@ class ViewController: UIViewController, WKScriptMessageHandler {
             
         }
     }
-    
-    
-    
     
     func popUpMsg( msg: String ) {
         let alert = UIAlertController(title: "Aviso!", message: msg, preferredStyle: UIAlertController.Style.alert)
@@ -104,12 +98,9 @@ class ViewController: UIViewController, WKScriptMessageHandler {
     }
     
     func openQrcodeView() {
-        self.dismiss(animated: true, completion: nil)
- 
+        let storyBoard: UIStoryboard = self.storyboard!
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "qrcodeViewController") as! QrcodeController
+        self.present(newViewController, animated: true, completion: nil)
     }
-
-
-
-
 }
 
